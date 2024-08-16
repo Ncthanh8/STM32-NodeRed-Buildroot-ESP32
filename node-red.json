@@ -1,0 +1,606 @@
+[
+    {
+        "id": "07417a180ab1c22b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7a94b0b4223cb5b2",
+        "type": "mqtt in",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "topic": "esp32/sensor",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "deacbe4a091dc798",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "80414b1fd1279bad",
+                "27066b4f88f43263",
+                "a8e6261f1f8ac2fb",
+                "7229e11fac5d1ccb",
+                "1a3d30a057b9b004",
+                "26fa0d6be4adc9ce",
+                "b2b21b83bdd290c9"
+            ]
+        ]
+    },
+    {
+        "id": "1b818e143a0f9502",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "5a82131ba6a3a21d",
+        "order": 1,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Temp1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "80414b1fd1279bad",
+        "type": "debug",
+        "z": "07417a180ab1c22b",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "27066b4f88f43263",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Temp 1",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Temp1}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "1b818e143a0f9502"
+            ]
+        ]
+    },
+    {
+        "id": "4d7b4d32c7995cf6",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "f6ad637501502de5",
+        "order": 1,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Temp2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a8e6261f1f8ac2fb",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Temp 2",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Temp2}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "4d7b4d32c7995cf6"
+            ]
+        ]
+    },
+    {
+        "id": "dc28969042045c07",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "5a82131ba6a3a21d",
+        "order": 2,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Humi1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7229e11fac5d1ccb",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Humi 1",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Humi1}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "dc28969042045c07"
+            ]
+        ]
+    },
+    {
+        "id": "3a7733797fe92aae",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "f6ad637501502de5",
+        "order": 2,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Humi2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1a3d30a057b9b004",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Humi 2",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Humi2}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "3a7733797fe92aae"
+            ]
+        ]
+    },
+    {
+        "id": "35739d139df486a0",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "f6ad637501502de5",
+        "order": 3,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Soil2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "26fa0d6be4adc9ce",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Soil 2",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Soil2}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "35739d139df486a0"
+            ]
+        ]
+    },
+    {
+        "id": "f786ad3f3eefaad4",
+        "type": "ui_gauge",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "group": "5a82131ba6a3a21d",
+        "order": 3,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Soil1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b2b21b83bdd290c9",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "Soil 1",
+        "func": "var tmp = msg.payload;\nreturn [{payload : tmp.Soil1}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "f786ad3f3eefaad4"
+            ]
+        ]
+    },
+    {
+        "id": "c11dd8096e885792",
+        "type": "ui_switch",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "label": "switch1",
+        "tooltip": "",
+        "group": "df59d52776af0503",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch1",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 120,
+        "y": 620,
+        "wires": [
+            [
+                "46cce9cefe1e7142"
+            ]
+        ]
+    },
+    {
+        "id": "e191e9588624c30f",
+        "type": "ui_switch",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "label": "switch2",
+        "tooltip": "",
+        "group": "df59d52776af0503",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch2",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 120,
+        "y": 660,
+        "wires": [
+            [
+                "000a934e153c6825"
+            ]
+        ]
+    },
+    {
+        "id": "adf4175aee70f7ba",
+        "type": "mqtt out",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "topic": "esp32/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "deacbe4a091dc798",
+        "x": 760,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "000a934e153c6825",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "function 1",
+        "func": "var payload = msg.payload;\nif (payload) {\n    return [{ topic: \"switch\", payload: { \"switch2\": 1 } }];\n}\nreturn [{ topic: \"switch\", payload: { \"switch2\": 0 } }];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 660,
+        "wires": [
+            [
+                "b882af8401b1e87e"
+            ]
+        ]
+    },
+    {
+        "id": "46cce9cefe1e7142",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "function 2",
+        "func": "var payload = msg.payload;\nif (payload){\n    return [{topic: \"switch\" , payload: {\"switch1\": 1}}];\n}\nreturn [{ topic: \"switch\", payload: {\"switch1\": 0}}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 620,
+        "wires": [
+            [
+                "b882af8401b1e87e"
+            ]
+        ]
+    },
+    {
+        "id": "b882af8401b1e87e",
+        "type": "join",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "f46eb2c74976b14c"
+            ]
+        ]
+    },
+    {
+        "id": "a7941c0a0189a2cf",
+        "type": "inject",
+        "z": "07417a180ab1c22b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "false",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "c11dd8096e885792",
+                "e191e9588624c30f"
+            ]
+        ]
+    },
+    {
+        "id": "f46eb2c74976b14c",
+        "type": "function",
+        "z": "07417a180ab1c22b",
+        "name": "function 3",
+        "func": "var payload = msg.payload;\nreturn [{ payload: [payload.switch1, payload.switch2]}];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 640,
+        "wires": [
+            [
+                "adf4175aee70f7ba"
+            ]
+        ]
+    },
+    {
+        "id": "deacbe4a091dc798",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5a82131ba6a3a21d",
+        "type": "ui_group",
+        "name": "Cụm cảm biến 1",
+        "tab": "dab6511b2649a698",
+        "order": 1,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f6ad637501502de5",
+        "type": "ui_group",
+        "name": "Cụm cảm biến 2",
+        "tab": "dab6511b2649a698",
+        "order": 3,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "df59d52776af0503",
+        "type": "ui_group",
+        "name": "Relay",
+        "tab": "dab6511b2649a698",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dab6511b2649a698",
+        "type": "ui_tab",
+        "name": "Vườn cây thông minh",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

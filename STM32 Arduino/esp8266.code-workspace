@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../esp8266"
+		},
+		{
+			"name": "stm32",
+			"path": "../../stm32"
+		},
+		{
+			"name": "STM32 Arduino",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

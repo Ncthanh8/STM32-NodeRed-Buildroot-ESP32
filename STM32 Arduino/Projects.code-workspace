@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "STM32 Arduino",
+			"path": "."
+		},
+		{
+			"name": "stm32",
+			"path": "../stm32"
+		},
+		{
+			"name": "esp32",
+			"path": "../esp32"
+		},
+		{
+			"name": "ESP32 Arduino",
+			"path": "../ESP32 Arduino"
+		},
+		{
+			"name": "dmto",
+			"path": "../dmto"
+		}
+	],
+	"settings": {}
+}
